@@ -7,7 +7,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import LinkBar from '@/components/LinkBar'; 
 import FooterLinks from '@/components/FooterLinks'; 
 import Typing from 'react-typing-effect';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 import React from 'react';
 import {
@@ -19,34 +21,54 @@ import {
   Box,
 } from '@mui/material';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+
 
 
 const HomePage = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    const isDark = localStorage.getItem('isDarkMode') === 'true';
+    setIsDarkMode(isDark);
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('isDarkMode', !isDarkMode);
+  };
+  const darkstyles = {
+    backgroundColor: isDarkMode ? '#333' : '#fff',
+    color: isDarkMode ? '#fff' : '#333',
+  };
+
   return (
-    <Container>
+    <div style={darkstyles}> 
+    <Container >
+      <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} ></DarkModeToggle>
       <div
-        className="flex flex-col md:flex-row items-center justify-center md:space-x-36 w-full bg-white p-4"
+        className="flex flex-col md:flex-row items-center justify-center md:space-x-36 w-full  p-4"
         style={{ minHeight: 'calc(100vh - 64px)' }} // Adjust the value '64px' based on the height of your header/navbar
       >
         <div className="text-center mb-8 md:mb-0 md:text-left mt-48">
-          <Typography variant="h4" className="mb-1 font-bold text-4xl">
-          ☀️ hello world! i&apos;m <span className="text-gray-500"> gray </span>
+          <Typography variant="h4" style={{ fontWeight: 'bold' }} className="mb-1 font-bold text-4xl">
+          ☀️ hello world! i&apos;m <span className="text-gray-400"> gray </span>
           </Typography>
-          <Typography className="text-gray-500">
-            • part-time coder, part-time artist — <><i className="text-gray-500">full-time dreamer</i></>
-            <br />
+          <Typography className="text-gray-400 text-center mr-12">
+           building @ <a className='text-purple-400' href="https://www.orchard-robotics.com/">orchard robotics</a> <span className = 'm-2 text-l'>&&</span> cs @ stanford 
+            {/* • part-time coder, part-time artist — <><i className="text-gray-500">full-time dreamer</i></> */}
+            {/* <br />
             <React.Fragment>
-              • computer science + design @ stanford
+              • making serendipity
               <br />
               • making serendipity
-            </React.Fragment>
+            </React.Fragment> */}
           </Typography>
 
           <LinkBar></LinkBar>
 
 
           <Box mt={6} className="text-center md:text-left">
-            <Typography className="mb-2 text-m text-gray-500 text-left">
+            <Typography className="mb-2 text-m text-gray-400 text-left">
               what i&apos;m listening to:
             </Typography>
             <iframe
@@ -72,6 +94,7 @@ const HomePage = () => {
      <FooterLinks></FooterLinks>
 
     </Container>
+    </div>
 
   );
 };

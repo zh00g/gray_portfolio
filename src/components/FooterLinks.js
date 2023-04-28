@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons';
 // library.add(faEnvelope, faGithub, faLinkedin);
 
 import React from 'react';
@@ -18,7 +18,7 @@ import Link from 'next/link';
 
 const FooterLinks = () => {
     return (
-        <footer style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+        <footer style={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
             {/* <div> HELLO </div> */}
             <div className="flex justify-center items-center mb-4">
                 <a href="https://github.com/zh00g" target="_blank" rel="noopener noreferrer">
@@ -32,6 +32,10 @@ const FooterLinks = () => {
                 <a href="mailto:gracexz@stanford.edu" target="_blank" rel="noopener noreferrer">
                     {/* <i className="fas fa-envelope mx-4 text-2xl hover:text-gray-400"></i> */}
                     <FontAwesomeIcon className='ml-2' size='2xl' icon={faEnvelope} fixedWidth />
+                </a>
+                <a href="https://drive.google.com/file/d/1pSt6Sc8KuDgTO56QCgGjZKk5D8lKutP-/edit?rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+                    {/* <i className="fas fa-envelope mx-4 text-2xl hover:text-gray-400"></i> */}
+                    <FontAwesomeIcon className='ml-2' size='2xl' icon={faFile} fixedWidth />
                 </a>
             </div>
         </footer>)
