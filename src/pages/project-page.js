@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, List, ListItem, ListItemText, Grid, Modal, Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import WorkCard from '@/components/WorkCard';
 import LinkBar from '@/components/LinkBar';
 import FooterLinks from '@/components/FooterLinks';
 import BackButton from '@/components/BackButton';
+import DarkModeContext from '../components/DarkModeContext';
+import { useState, useContext, useEffect } from 'react';
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 const HelloWorldLinks = () => {
     return (
@@ -30,7 +33,22 @@ const HelloWorldLinks = () => {
 
 const ProjectPage = () => {
     const [selectedWork, setSelectedWork] = useState(null);
-
+    const { isDarkMode, setIsDarkMode, toggleDarkMode } = useContext(
+        DarkModeContext
+    );
+    useEffect(() => {
+        const isDark = localStorage.getItem('isDarkMode') === 'true';
+        setIsDarkMode(isDark);
+    }, []);
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.style.backgroundColor = '#333';
+            document.body.style.color = '#fff';
+        } else {
+            document.body.style.backgroundColor = '#fff';
+            document.body.style.color = '#333';
+        }
+    }, [isDarkMode]);
     const handleCloseModal = () => {
         setSelectedWork(null);
     };
@@ -73,11 +91,12 @@ const ProjectPage = () => {
 
     return (
         <Container>
+            <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} ></DarkModeToggle>
             <div className='pl-16'
             >
                 <BackButton></BackButton>
                 <HelloWorldLinks></HelloWorldLinks>
-                <Typography className="text-gray-500 pb-4">
+                <Typography className="text-gray-400 pb-4">
                     • view my <a className='text-purple-400' href="https://drive.google.com/file/d/1pSt6Sc8KuDgTO56QCgGjZKk5D8lKutP-/edit?rtpof=true&sd=true">resume</a>
                 </Typography>
                 <Grid container spacing={2} className='w-100'>

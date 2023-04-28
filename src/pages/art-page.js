@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container, List, ListItem, ListItemText, Grid, Modal, Box, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,8 @@ import ArtCard from '../components/ArtCard';
 import LinkBar from '@/components/LinkBar';
 import BackButton from '@/components/BackButton';
 import FooterLinks from '@/components/FooterLinks';
+import DarkModeContext from '../components/DarkModeContext';
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 const HelloWorldLinks = () => {
     return (
@@ -38,6 +40,22 @@ const HelloWorldLinks = () => {
 const ArtPage = () => {
     const router = useRouter();
     const [sliderRef, setSliderRef] = useState(null);
+    const { isDarkMode, setIsDarkMode, toggleDarkMode } = useContext(
+        DarkModeContext
+    );
+    useEffect(() => {
+        const isDark = localStorage.getItem('isDarkMode') === 'true';
+        setIsDarkMode(isDark);
+    }, []);
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.style.backgroundColor = '#333';
+            document.body.style.color = '#fff';
+        } else {
+            document.body.style.backgroundColor = '#fff';
+            document.body.style.color = '#333';
+        }
+    }, [isDarkMode]);
 
     const settings = {
         dots: false,
@@ -126,10 +144,11 @@ const ArtPage = () => {
 
     return (
         <Container>
+            <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} ></DarkModeToggle>
             <div className='pl-16'>
                 <BackButton></BackButton>
                 <HelloWorldLinks></HelloWorldLinks>
-                <Typography className="text-gray-500">
+                <Typography className="text-gray-400">
                     • all mixed media drawn in procreate
                     <br />
                     <React.Fragment>

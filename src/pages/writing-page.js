@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container, List, ListItem, ListItemText, Grid, Modal, Box, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,8 @@ import WritingCard from '../components/WritingCard';
 import LinkBar from '@/components/LinkBar';
 import BackButton from '@/components/BackButton';
 import FooterLinks from '@/components/FooterLinks';
+import DarkModeContext from '../components/DarkModeContext';
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 const HelloWorldLinks = () => {
     return (
@@ -40,7 +42,22 @@ const WritingPage = () => {
     const [sliderRef1, setSliderRef1] = useState(null);
     const [sliderRef2, setSliderRef2] = useState(null);
 
-
+    const { isDarkMode, setIsDarkMode, toggleDarkMode } = useContext(
+        DarkModeContext
+    );
+    useEffect(() => {
+        const isDark = localStorage.getItem('isDarkMode') === 'true';
+        setIsDarkMode(isDark);
+    }, []);
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.style.backgroundColor = '#333';
+            document.body.style.color = '#fff';
+        } else {
+            document.body.style.backgroundColor = '#fff';
+            document.body.style.color = '#333';
+        }
+    }, [isDarkMode]);
     const settings = {
         dots: false,
         infinite: true,
@@ -133,10 +150,11 @@ const WritingPage = () => {
 
     return (
         <Container>
+            <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} ></DarkModeToggle>
             <div className='pl-16'>
                 <BackButton></BackButton>
                 <HelloWorldLinks></HelloWorldLinks>
-                <Typography className="text-gray-500 mb-6">
+                <Typography className="text-gray-400 mb-6">
                     • a collection of thoughts throughout the process of finding who i was and who i am
                     <br />
                     <React.Fragment>
@@ -145,7 +163,7 @@ const WritingPage = () => {
                 </Typography>
                 <div className="flex flex-col items-center justify-center min-h-screen pb-96">
                     <div className="relative w-full pb-32">
-                        <Typography className="text-gray-500 ml-2">
+                        <Typography className="text-gray-400 ml-2">
                             shorter drabbles
                         </Typography>
                         <Slider {...settings} ref={(slider1) => setSliderRef1(slider1)}>
@@ -169,7 +187,7 @@ const WritingPage = () => {
                             </button>
                         </div>
 
-                        <Typography className="text-gray-500 ml-2 mt-6">
+                        <Typography className="text-gray-400 ml-2 mt-6">
                             longer essays
                         </Typography>
 

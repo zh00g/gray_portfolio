@@ -8,7 +8,7 @@ import LinkBar from '@/components/LinkBar';
 import FooterLinks from '@/components/FooterLinks';
 import Typing from 'react-typing-effect';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-
+import DarkModeContext from '../components/DarkModeContext';
 import DarkModeToggle from '@/components/DarkModeToggle';
 
 import React from 'react';
@@ -21,28 +21,41 @@ import {
   Box,
 } from '@mui/material';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, useContext } from 'react';
 
 
 
 const HomePage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, setIsDarkMode, toggleDarkMode } = useContext(
+    DarkModeContext
+  );
   useEffect(() => {
     const isDark = localStorage.getItem('isDarkMode') === 'true';
     setIsDarkMode(isDark);
   }, []);
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.style.backgroundColor = '#333';
+      document.body.style.color = '#fff';
+    } else {
+      document.body.style.backgroundColor = '#fff';
+      document.body.style.color = '#333';
+    }
+  }, [isDarkMode]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem('isDarkMode', !isDarkMode);
-  };
+  // const toggleDarkMode = () => {
+  //   setIsDarkMode(!isDarkMode);
+  //   localStorage.setItem('isDarkMode', !isDarkMode);
+  // };
   const darkstyles = {
     backgroundColor: isDarkMode ? '#333' : '#fff',
     color: isDarkMode ? '#fff' : '#333',
   };
 
   return (
-    <div style={darkstyles}>
+    <div >
       <Container >
         <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} ></DarkModeToggle>
         <div
@@ -53,7 +66,7 @@ const HomePage = () => {
             <Typography variant="h4" style={{ fontWeight: 'bold' }} className="mb-1 font-bold text-4xl">
               ☀️ hello world! i&apos;m <span className="text-gray-400"> gray </span>
             </Typography>
-            <Typography className="text-gray-400 text-center mr-12">
+            <Typography className="pl-12 text-gray-400 text-left mr-12">
               building @ <a className='text-purple-400' href="https://www.orchard-robotics.com/">orchard robotics</a> <span className='m-2 text-l'>&&</span> cs @ stanford
               {/* • part-time coder, part-time artist — <><i className="text-gray-500">full-time dreamer</i></> */}
               {/* <br />
@@ -83,16 +96,16 @@ const HomePage = () => {
               ></iframe>
             </Box>
           </div>
-          <Box> 
-          <img
-            src="/gray-plane.png"
-            alt="self pic"
-            className="w-full h-full object-cover mt-4"
-            style={{ width: '80%', maxWidth: '100%' }}
-          />
-          <Typography variant="subtitle1" className="text-gray-400 text-xs text-left  mt-1">
-          📸: matt | 📍: abandoned hangar in chandler 
-          </Typography>
+          <Box>
+            <img
+              src="/gray-plane.png"
+              alt="self pic"
+              className="w-full h-full object-cover mt-4"
+              style={{ width: '80%', maxWidth: '100%' }}
+            />
+            <Typography style={{ fontSize: '12px' }} className="text-gray-400 text-xs text-left  mt-1">
+              📸: matt | 📍: abandoned hangar, chandler
+            </Typography>
           </Box>
         </div>
 

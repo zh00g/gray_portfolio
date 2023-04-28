@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container, List, ListItem, ListItemText, Grid, Modal, Box, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,8 @@ import ExtraCard from '../components/ExtraCard';
 import LinkBar from '@/components/LinkBar';
 import BackButton from '@/components/BackButton';
 import FooterLinks from '@/components/FooterLinks';
+import DarkModeToggle from '@/components/DarkModeToggle';
+import DarkModeContext from '../components/DarkModeContext';
 
 const HelloWorldLinks = () => {
     return (
@@ -40,13 +42,23 @@ const HelloWorldLinks = () => {
 const ExtrasPage = () => {
     const router = useRouter();
     const [sliderRef, setSliderRef] = useState(null);
-    // const [isDarkMode, setIsDarkMode] = useState(
-    //     localStorage.getItem('isDarkMode') === 'true'
-    //   );
-    //   const darkstyles = {
-    //     backgroundColor: isDarkMode ? '#333' : '#fff',
-    //     color: isDarkMode ? '#fff' : '#333',
-    //   };
+
+    const { isDarkMode, setIsDarkMode, toggleDarkMode } = useContext(
+        DarkModeContext
+    );
+    useEffect(() => {
+        const isDark = localStorage.getItem('isDarkMode') === 'true';
+        setIsDarkMode(isDark);
+    }, []);
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.style.backgroundColor = '#333';
+            document.body.style.color = '#fff';
+        } else {
+            document.body.style.backgroundColor = '#fff';
+            document.body.style.color = '#333';
+        }
+    }, [isDarkMode]);
 
     const settings = {
         dots: false,
@@ -91,7 +103,7 @@ const ExtrasPage = () => {
         {
             title: 'skating',
             image: '/skate.png',
-            description: '📸: shihao | 📍: eng quad, cornell ',
+            description: '📸: shihao | 📍: north campus, cornell ',
             route: '/skating', // specify the route for this card
         },
         {
@@ -134,44 +146,45 @@ const ExtrasPage = () => {
 
     return (
         // <div style={darkstyles}>
-            <Container>
-                <div className='pl-16'>
-                    <BackButton></BackButton>
-                    <HelloWorldLinks></HelloWorldLinks>
-                    <Typography className="text-gray-500">
-                        • my joie de vivre! things i love and will scream to you about!!!!!
-                        <br />
-                        {/* <React.Fragment>
-                        • 
-                    </React.Fragment> */}
-                    </Typography>
-                    <div className="flex flex-col items-center justify-center min-h-screen pb-96">
-                        <div className="relative w-full">
-                            <Slider {...settings} ref={(slider) => setSliderRef(slider)}>
-                                {artworks.map((artwork, index) => (
-                                    <div key={index} className="px-2">
-                                        <ExtraCard
-                                            title={artwork.title}
-                                            image={artwork.image}
-                                            description={artwork.description}
-                                            route={artwork.route}
-                                        />
-                                    </div>
-                                ))}
-                            </Slider>
-                            <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4">
-                                <button className="bg-gray-200 rounded-full p-2" onClick={() => sliderRef.slickPrev()}>
-                                    <FontAwesomeIcon icon={faArrowLeft} size="lg" />
-                                </button>
-                                <button className="bg-gray-200 rounded-full p-2" onClick={() => sliderRef.slickNext()}>
-                                    <FontAwesomeIcon icon={faArrowRight} size="lg" />
-                                </button>
-                            </div>
+        <Container>
+            <DarkModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} toggleDarkMode={toggleDarkMode} ></DarkModeToggle>
+            <div className='pl-16'>
+                <BackButton></BackButton>
+                <HelloWorldLinks></HelloWorldLinks>
+                <Typography className="text-gray-400">
+                    • my joie de vivre!
+                    <br />
+                    <React.Fragment>
+                        • things i love and will scream to you about!!!!!
+                    </React.Fragment>
+                </Typography>
+                <div className="flex flex-col items-center justify-center min-h-screen pb-96">
+                    <div className="relative w-full">
+                        <Slider {...settings} ref={(slider) => setSliderRef(slider)}>
+                            {artworks.map((artwork, index) => (
+                                <div key={index} className="px-2">
+                                    <ExtraCard
+                                        title={artwork.title}
+                                        image={artwork.image}
+                                        description={artwork.description}
+                                        route={artwork.route}
+                                    />
+                                </div>
+                            ))}
+                        </Slider>
+                        <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4">
+                            <button className="bg-gray-200 rounded-full p-2" onClick={() => sliderRef.slickPrev()}>
+                                <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+                            </button>
+                            <button className="bg-gray-200 rounded-full p-2" onClick={() => sliderRef.slickNext()}>
+                                <FontAwesomeIcon icon={faArrowRight} size="lg" />
+                            </button>
                         </div>
                     </div>
                 </div>
-                <FooterLinks></FooterLinks>
-            </Container>
+            </div>
+            <FooterLinks></FooterLinks>
+        </Container>
         // </div>
     );
 };

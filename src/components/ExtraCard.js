@@ -22,7 +22,7 @@ const ExtraCard = ({ title, image, description, route }) => {
                         <Typography gutterBottom variant="h6" component="div">
                             {title}
                         </Typography>
-                        <Typography variant="subtitle1" className="text-gray-400 text-xs text-left">
+                        <Typography style={{ fontSize: '12px' }} className="text-gray-400 text-left">
                             {description}
                         </Typography>
                     </CardContent>
