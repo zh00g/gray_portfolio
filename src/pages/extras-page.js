@@ -79,49 +79,49 @@ const ExtrasPage = () => {
         {
             title: 'music',
             image: '/dj.png',
-            description: 'optimistic self portrait',
+            description: '📸: eric | 📍: vietnamtown, san jose ',
             route: '/music', // specify the route for this card
         },
         {
             title: 'jewelry',
             image: '/jewelry.png',
-            description: 'optimistic self portrait',
+            description: '📸: me | 📍: my dorm @ 1018 ',
             route: '/jewelry', // specify the route for this card
         },
         {
             title: 'skating',
             image: '/skate.png',
-            description: 'optimistic self portrait',
+            description: '📸: shihao | 📍: eng quad, cornell ',
             route: '/skating', // specify the route for this card
         },
         {
             title: 'lifts',
             image: '/bench.png',
-            description: 'optimistic self portrait',
+            description: '📸: chris | 📍: nearillaga, stanford ',
             route: '/lifts', // specify the route for this card
         },
         {
             title: 'home',
             image: '/succulents.png',
-            description: 'optimistic self portrait',
+            description: '📸: me | 📍: backyard, irvine ',
             route: '/home', // specify the route for this card
         },
         {
             title: 'cars',
             image: '/grayjeep.png',
-            description: 'optimistic self portrait',
+            description: '📸: mom | 📍: lake havasu, az ',
             route: '/cars', // specify the route for this card
         },
         {
             title: 'cartwheel',
             image: '/cartwheel.png',
-            description: 'optimistic self portrait',
+            description: '📸: mom | 📍: cabo da roca, portugal ',
             route: '/cartwheel', // specify the route for this card
         },
         {
             title: 'boots',
             image: '/boots.png',
-            description: 'optimistic self portrait',
+            description: '📸: me | 📍: around the world la la la ',
             route: '/boots', // specify the route for this card
         },
         // {
