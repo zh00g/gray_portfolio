@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 i've been meaning to create a site from scratch for myself for years -- this is me finally following through. this is built with Nextjs and Tailwind and deployed on Vercel. (much thanks to alix for introducing me to all of the above). 
 
-If you would like to use any of the designs or code i've made and written, please let me know! :)
+if you would like to use any of the designs or code i've made and written, please let me know! :)
 
 ## upcoming
 
