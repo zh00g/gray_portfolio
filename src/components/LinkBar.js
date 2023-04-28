@@ -23,7 +23,7 @@ const LinkBar = () => {
           <Link href="/work-page" >
             <ListItemText
               primary="work"
-              className="text-purple-400 cursor-pointer"
+              className="text-purple-400 cursor-pointer hover:scale-105 transition-all duration-300"
             />
           </Link>
         </ListItem>
@@ -31,31 +31,31 @@ const LinkBar = () => {
           <Link href="/project-page">
             <ListItemText
               primary="projects"
-              className="text-purple-400 cursor-pointer"
+              className="text-purple-400 cursor-pointer hover:scale-105 transition-all duration-300"
             />
           </Link>
         </ListItem>
         <ListItem className="flex-auto  list-divider">
-          <Link href="/writing">
+          <Link href="/writing-page">
             <ListItemText
               primary="writing"
-              className="text-purple-400 cursor-pointer"
+              className="text-purple-400 cursor-pointer hover:scale-105 transition-all duration-300"
             />
           </Link>
         </ListItem>
         <ListItem className="flex-auto list-divider">
-          <Link href="/art">
+          <Link href="/art-page">
             <ListItemText
               primary="art"
-              className="text-purple-400 cursor-pointer"
+              className="text-purple-400 cursor-pointer hover:scale-105 transition-all duration-300"
             />
           </Link>
         </ListItem>
         <ListItem className="flex-auto">
-          <Link href="/extras">
+          <Link href="/extras-page">
             <ListItemText
               primary="extras"
-              className="text-purple-400 cursor-pointer"
+              className="text-purple-400 cursor-pointer hover:scale-105 transition-all duration-300"
             />
           </Link>
         </ListItem>
