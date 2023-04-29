@@ -152,7 +152,7 @@ const ArtPage = () => {
                     • all mixed media drawn in procreate
                     <br />
                     <React.Fragment>
-                        • find more <a className='text-purple-400' href="https://www.instagram.com/artbygrayy/">@artbygrayy</a>
+                        • find more <a className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400' href="https://www.instagram.com/artbygrayy/">@artbygrayy</a>
                     </React.Fragment>
                 </Typography>
                 <div className="flex flex-col items-center justify-center min-h-screen pb-96">

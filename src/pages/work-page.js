@@ -96,7 +96,7 @@ const WorkPage = () => {
         <BackButton></BackButton>
         <HelloWorldLinks></HelloWorldLinks>
         <Typography className="text-gray-400 pb-4">
-          • view my <a className='text-purple-400' href="https://drive.google.com/file/d/1pSt6Sc8KuDgTO56QCgGjZKk5D8lKutP-/edit?rtpof=true&sd=true">resume</a>
+          • view my <a className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400' href="https://drive.google.com/file/d/1pSt6Sc8KuDgTO56QCgGjZKk5D8lKutP-/edit?rtpof=true&sd=true">resume</a>
         </Typography>
         <Grid container spacing={2} className='w-100'>
           {workData.map((work) => (
