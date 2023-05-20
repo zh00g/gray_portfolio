@@ -90,8 +90,13 @@ const ProjectPage = () => {
             id: 4,
             title: 'barefoot',
             image: '/barefoot.jpeg',
+            demo: 'https://www.youtube.com/watch?v=PB9jb-c3NtI',
+            website: 'https://hci.stanford.edu/courses/cs147/2021/wi/projects/Sustainability/barefoot/',
+            report: 'https://hci.stanford.edu/courses/cs147/2021/wi/projects/Sustainability/barefoot/Finalreport.pdf',
             description: 'cs147 final project | spr 21',
-            moreInfo: ['one', 'two'],
+            moreInfo: ['Built a mobile application that promotes sustainability by immersing people in their natural environment while exploring walks and trails in the area',
+                'Iterated through the entire design cycle of Needfinding, Ideating, Low, Medium, and High-fidelity Prototying, and User Testing.',
+                'Employed methods such as empathy and journal mapping, experience prototyping, storyboarding, heuristic evaluation.'],
             tags: ['Figma', 'React Native']
         },
         // Add more work objects here
@@ -121,66 +126,105 @@ const ProjectPage = () => {
                     ))}
                 </Grid>
                 <Modal
-          open={!!selectedWork}
-          onClose={handleCloseModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box
-            sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              bgcolor: 'background.paper',
-              boxShadow: 24,
-              p: 4,
-              maxWidth: '90%',
-              minWidth: '55%',
-              minHeight: '60%',
-              maxHeight: '75%',
-            }}
-          >
-            <div className="flex items-center">
-              <img className="pb-2 object-contain w-20 h-20 mr-4" src={selectedWork?.image} alt="Your alt text" />
-              <div>
-                <Typography className="text-slate-800" id="modal-modal-title" variant="h4" component="h2">
-                  {selectedWork?.title}
-                </Typography>
-                <Typography className="text-slate-500 text-xs" style={{ fontSize: '12px' }} id="modal-modal-description" sx={{ mt: 0 }}>
-                  {selectedWork?.description}
-                </Typography>
-              </div>
-            </div>
+                    open={!!selectedWork}
+                    onClose={handleCloseModal}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            bgcolor: 'background.paper',
+                            boxShadow: 24,
+                            p: 4,
+                            maxWidth: '90%',
+                            minWidth: '55%',
+                            minHeight: '60%',
+                            maxHeight: '75%',
+                        }}
+                    >
+                        <div className="flex items-center">
+                            <img className="pb-2 object-contain w-20 h-20 mr-4" src={selectedWork?.image} alt="Your alt text" />
+                            <div>
+                                <Typography className="text-slate-800" id="modal-modal-title" variant="h4" component="h2">
+                                    {selectedWork?.title}
+                                </Typography>
+                                <Typography className="text-slate-500 text-xs" style={{ fontSize: '12px' }} id="modal-modal-description" sx={{ mt: 0 }}>
+                                    {selectedWork?.description}
+                                </Typography>
+                            </div>
+                        </div>
 
-            <hr className='border-gray-300 my-2' />
-            {selectedWork?.moreInfo && (
-              <div className="flex mt-2 flex-col pt-1 text-xs">
-                {selectedWork?.moreInfo.map((info, index) => (
-                  <Typography variant="body2" key={index} className="pt-1 pl-1 text-gray-500 block" id="modal-modal-description" sx={{ mt: 0 }}>
-                    - {info}
-                  </Typography>
-                ))}
-              </div>
-            )}
-            {selectedWork?.tags && (
-              <div className="absolute bottom-4 flex flex-row pt-1 text-xs">
-                {selectedWork?.tags.map((tag, index) => (
-                  <div
-                    key={index}
-                    className=" rounded-full bg-gray-200 text-gray-700 px-2 py-1 mr-1"
-                  >
-                    {tag}
-                  </div>
-                ))}
-              </div>
-            )}
+                        <hr className='border-gray-300 my-2' />
+                        {selectedWork?.moreInfo && (
+                            <div className="flex mt-2 flex-col pt-1 text-xs">
+                                {selectedWork?.moreInfo.map((info, index) => (
+                                    <Typography variant="body2" key={index} className="pt-1 pl-1 text-gray-500 block" id="modal-modal-description" sx={{ mt: 0 }}>
+                                        - {info}
+                                    </Typography>
+                                ))}
+                            </div>
+                        )}
+                        <div className='pl-1 py-1 text-sm'>
+                            {selectedWork?.demo && (
+                                <div>
+                                    <a
+                                        className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400'
+                                        href={selectedWork?.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View the demo
+                                    </a>
+                                </div>
+                            )}
+                            {selectedWork?.report && (
+                                <div>
+                                    <a
+                                        className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400'
+                                        href={selectedWork?.report}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View the website
+                                    </a>
+                                </div>
+                            )}
+                            {selectedWork?.website && (
+                                <div>
+                                    <a
+                                        className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400'
+                                        href={selectedWork?.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View the report
+                                    </a>
+                                </div>
+                            )}
+                        </div>
 
-            <Typography style={{ fontSize: '12px' }} className=" py-2 absolute bottom-10 px-1 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
-              {selectedWork?.note}
-            </Typography>
-          </Box>
-        </Modal>
+                        {selectedWork?.tags && (
+                            <div className="absolute bottom-4 flex flex-row pt-1 text-xs">
+                                {selectedWork?.tags.map((tag, index) => (
+                                    <div
+                                        key={index}
+                                        className=" rounded-full bg-gray-200 text-gray-700 px-2 py-1 mr-1"
+                                    >
+                                        {tag}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        <Typography style={{ fontSize: '12px' }} className=" py-2 absolute bottom-10 px-1 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
+                            {selectedWork?.note}
+                        </Typography>
+                    </Box>
+                </Modal>
                 <FooterLinks></FooterLinks>
             </div>
         </Container>
