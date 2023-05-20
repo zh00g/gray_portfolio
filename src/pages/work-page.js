@@ -79,7 +79,10 @@ const WorkPage = () => {
       description: 'fullstack (web) @ fb core ads',
       role: 'fullstack (web)',
       duration: 'jun 2022 - sep 2022',
-      moreInfo: ['one', 'two'],
+      moreInfo: ['Created a new page e2e in the ACO Portal that automates Ad Creative Optimization feature testing.',
+        'Implemented logging and user history tracking across the entire suite of ACO Portal tools for ad optimizations and created a new page e2e to display and monitor usage and metrics.',
+        'ACO Portal tooling is used by all ad-related teams and initiatives across the organization for dev optimization.'
+      ],
       tags: ['React', 'Hack']
     },
     {
@@ -89,7 +92,11 @@ const WorkPage = () => {
       role: 'fullstack (mobile)',
       duration: 'sep 2021 - dec 2021',
       description: 'fullstack (mobile) @ fb shops',
-      moreInfo: ['one', 'two'],
+      moreInfo: ['Created new notification sent to users who join a group with Group Shops in Hack to increase exposure of shops.',
+        'Added deduping functionality for an existing notification that sends when a shop is linked to a group.',
+        'Coordinated with designers and engineers across teams and codebases to build the explorable Group Shop module.',
+        'Created a new module e2e in the Shop Tab that highlights popular Group Shops in Hack, React Native, Relay and directs to an infinite scroll page to increase traffic and exposure of these shops.'
+      ],
       tags: ['React Native', 'Hack', 'GraphQL']
     },
     {
@@ -99,7 +106,9 @@ const WorkPage = () => {
       role: 'backend',
       duration: 'jun 2021 - sep 2021',
       description: 'backend @ aws personalize',
-      moreInfo: ['one', 'two'],
+      moreInfo: ['Implemented 3 new customer-facing APIs in Java using Amazon’s proprietary RPC framework (Coral) to handle tagging resources in the AWS Personalize service.',
+        'Created testing infrastructure by adding unit tests and implemented sweeper API.'
+      ],
       tags: ['Java']
     },
     // Add more work objects here
@@ -164,7 +173,7 @@ const WorkPage = () => {
             {selectedWork?.moreInfo && (
               <div className="flex mt-2 flex-col pt-1 text-xs">
                 {selectedWork?.moreInfo.map((info, index) => (
-                  <Typography variant="body" key={index} className="pt-1 pl-1 text-gray-500 block" id="modal-modal-description" sx={{ mt: 0 }}>
+                  <Typography variant="body2" key={index} className="pt-1 pl-1 text-gray-500 block" id="modal-modal-description" sx={{ mt: 0 }}>
                     - {info}
                   </Typography>
                 ))}
