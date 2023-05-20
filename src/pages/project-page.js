@@ -74,8 +74,12 @@ const ProjectPage = () => {
             id: 1,
             title: 'stamp assembly',
             image: '/stamplogo.png',
+            report: 'https://drive.google.com/file/d/1DVVmiBdPkuY5KWIsVTtIiWNedQvlO5BL/view?usp=sharing',
             description: 'me102 final project | fall 22',
-            moreInfo: ['one', 'two'],
+            moreInfo: ['Built a rotary-actuated stamping machine inspired by the crank slider mechanism.',
+                'Adhered to design constraints regarding mechanism size and spring working distance.',
+                'Designed the entire assembly in CAD and iterated through multiple prototypes to optimize the design.',
+                'Stamp machine body laser cut from 1/4" acrylic, stamp holder 3D printed, sliding stamp tray with rotating lid cut from 1/8" acrylic.'],
             tags: ['CAD', 'Laser Cutting', '3D Printing']
         },
         // {
@@ -189,7 +193,7 @@ const ProjectPage = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        View the website
+                                        View the report
                                     </a>
                                 </div>
                             )}
@@ -201,7 +205,7 @@ const ProjectPage = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        View the report
+                                        View the website
                                     </a>
                                 </div>
                             )}
