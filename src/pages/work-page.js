@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, List, ListItem, ListItemText, Grid, Modal, Box, Typography } from '@mui/material';
+import { Container, CardMedia, List, ListItem, ListItemText, Grid, Modal, Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import WorkCard from '@/components/WorkCard';
 import LinkBar from '@/components/LinkBar';
@@ -59,7 +59,17 @@ const WorkPage = () => {
       title: 'orchard',
       image: '/orchard.svg',
       description: 'fullstack (web) @ fruitscope cloud',
-      moreInfo: 'More information about Work 1',
+      role: 'fullstack (web)',
+      duration: 'feb 2023 - present',
+      note: `Deciding to work at Orchard and 
+      in the startup space, especially while still enrolled full time as a student, 
+      is the most intentional and impactful decision I have made in my career. I would love to chat about the journey this has been!`,
+      moreInfo:
+        ['8th engineer on the founding team',
+          'Built and own the entire stack for the user-facing FruitScope Cloud web-application from scratch in < 2 months',
+          'Implemented and optimized MongoDB data ingestion to handle farmers’ scan data of 2million+ buds per scan per block',
+          'Implemented and optimized Flask endpoints and MongoDB data querying to transfer orchard and block and tree level data for farmers',
+          'Designed and implemented front-end interface to display farmers’ orchard scan data, including responsive MapBox integration, data exports, and data visualizations'],
       tags: ['React', 'MongoDB', 'Flask']
     },
     {
@@ -67,23 +77,29 @@ const WorkPage = () => {
       title: 'meta',
       image: '/metalogo.png',
       description: 'fullstack (web) @ fb core ads',
-      moreInfo: 'More information about Work 1',
+      role: 'fullstack (web)',
+      duration: 'jun 2022 - sep 2022',
+      moreInfo: ['one', 'two'],
       tags: ['React', 'Hack']
     },
     {
       id: 3,
       title: 'meta',
       image: '/metalogo.png',
+      role: 'fullstack (mobile)',
+      duration: 'sep 2021 - dec 2021',
       description: 'fullstack (mobile) @ fb shops',
-      moreInfo: 'More information about Work 1',
+      moreInfo: ['one', 'two'],
       tags: ['React Native', 'Hack', 'GraphQL']
     },
     {
       id: 4,
       title: 'amazon',
       image: '/awslogo.png',
+      role: 'backend',
+      duration: 'jun 2021 - sep 2021',
       description: 'backend @ aws personalize',
-      moreInfo: 'More information about Work 1',
+      moreInfo: ['one', 'two'],
       tags: ['Java']
     },
     // Add more work objects here
@@ -127,13 +143,48 @@ const WorkPage = () => {
               boxShadow: 24,
               p: 4,
               maxWidth: '90%',
+              minWidth: '55%',
+              minHeight: '60%',
+              maxHeight: '75%',
             }}
           >
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              {selectedWork?.title}
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {selectedWork?.moreInfo}
+            <div className="flex items-center">
+              <img className="pb-2 object-contain w-20 h-20 mr-4" src={selectedWork?.image} alt="Your alt text" />
+              <div>
+                <Typography className="text-slate-800" id="modal-modal-title" variant="h4" component="h2">
+                  {selectedWork?.title}
+                </Typography>
+                <Typography className="text-slate-500 text-xs" style={{ fontSize: '12px' }} id="modal-modal-description" sx={{ mt: 0 }}>
+                  {selectedWork?.role} | {selectedWork?.duration}
+                </Typography>
+              </div>
+            </div>
+
+            <hr className='border-gray-300 my-2' />
+            {selectedWork?.moreInfo && (
+              <div className="flex mt-2 flex-col pt-1 text-xs">
+                {selectedWork?.moreInfo.map((info, index) => (
+                  <Typography variant="body" key={index} className="pt-1 pl-1 text-gray-500 block" id="modal-modal-description" sx={{ mt: 0 }}>
+                    - {info}
+                  </Typography>
+                ))}
+              </div>
+            )}
+            {selectedWork?.tags && (
+              <div className="absolute bottom-4 flex flex-row pt-1 text-xs">
+                {selectedWork?.tags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className=" rounded-full bg-gray-200 text-gray-700 px-2 py-1 mr-1"
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <Typography style={{ fontSize: '12px' }} className=" py-2 absolute bottom-10 px-1 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
+              {selectedWork?.note}
             </Typography>
           </Box>
         </Modal>
