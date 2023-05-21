@@ -57,9 +57,10 @@ const ProjectPage = () => {
         {
             id: 5,
             title: 'rizzcipe',
-            image: '/barefoot.jpeg',
+            image: '/rizzcipe.png',
             description: 'cs194 final project | spr 23',
-            moreInfo: ['one', 'two'],
+            moreInfo: ['Built the full stack of a mobile application that recommends recipes to a user based on a picture of their fridge that they take.', 
+            `Leveraged Facebook's Segment Anything Model for segmentation, fine-tuned a ResNet model for classification, integrated with the openAI api for recipe recommendations based on identified ingredients.`],
             tags: ['React Native', 'Flask']
         },
         {
@@ -67,13 +68,14 @@ const ProjectPage = () => {
             title: 'spotify',
             image: '/spotify2.png',
             description: 'cs448b final project | win 23',
-            moreInfo: ['one', 'two'],
-            tags: ['React']
+            moreInfo: [`Built a web application to analyze similarities within a user's Spotify playlists.`, 
+            'Implemented a comparator algorithm across different song attributes and visualized the similarity graph with D3.js.'],
+            tags: ['React', 'D3.js']
         },
         {
             id: 1,
             title: 'stamp assembly',
-            image: '/stamplogo.png',
+            image: '/stamp.png',
             report: 'https://drive.google.com/file/d/1DVVmiBdPkuY5KWIsVTtIiWNedQvlO5BL/view?usp=sharing',
             description: 'me102 final project | fall 22',
             moreInfo: ['Built a rotary-actuated stamping machine inspired by the crank slider mechanism.',
