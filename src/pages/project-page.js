@@ -66,7 +66,7 @@ const ProjectPage = () => {
         {
             id: 0,
             title: 'spotify',
-            image: '/spotify2.png',
+            image: '/1942.png',
             description: 'cs448b final project | win 23',
             moreInfo: [`Built a web application to analyze similarities within a user's Spotify playlists.`, 
             'Implemented a comparator algorithm across different song attributes and visualized the similarity graph with D3.js.'],
