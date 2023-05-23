@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, Typography, Dialog, DialogContent, DialogTitle } from '@mui/material';
+import { Card, Box, Modal, CardContent, Typography, Dialog, DialogContent, DialogTitle } from '@mui/material';
 import styles from './WritingCard.module.css';
 
 
@@ -35,17 +35,41 @@ const WritingCard = ({ tags, title, author, text }) => {
                     )}
                 </CardContent>
             </Card>
-            <Dialog open={open} onClose={handleClose} maxWidth="md">
-                <DialogTitle className='text-xl'>{title}</DialogTitle>
-                <DialogContent>
-                    {/* <Typography className='text-gray-500 p-4' variant="body1">{text}</Typography> */}
-                    {text.split('\n').map((line, index) => (
-                        <Typography className='text-gray-500 p-4' key={index} variant="body1" >
-                            {line}
-                        </Typography>
-                    ))}
-                </DialogContent>
-            </Dialog>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                {/* <Dialog open={open} onClose={handleClose} maxWidth="md"> */}
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        bgcolor: 'background.paper',
+                        boxShadow: 24,
+                        p: 4,
+                        maxWidth: '90%',
+                        minWidth: '55%',
+                        minHeight: '60%',
+                        maxHeight: '75%',
+                    }}
+                    className='overflow-y-scroll'
+                >
+                    <Typography className='text-gray-500 text-xl'>{title}</Typography>
+                    <Typography>
+                        {/* <Typography className='text-gray-500 p-4' variant="body1">{text}</Typography> */}
+                        {text.split('\n').map((line, index) => (
+                            <Typography className='text-gray-500 p-4' key={index} variant="body1" >
+                                {line}
+                            </Typography>
+                        ))}
+                    </Typography>
+                </Box>
+                {/* </Dialog> */}
+            </Modal>
         </>
     );
 };

@@ -95,7 +95,7 @@ const ProjectPage = () => {
         {
             id: 4,
             title: 'barefoot',
-            image: '/barefoot.jpeg',
+            image: '/barefoot2.png',
             demo: 'https://www.youtube.com/watch?v=PB9jb-c3NtI',
             website: 'https://hci.stanford.edu/courses/cs147/2021/wi/projects/Sustainability/barefoot/',
             report: 'https://hci.stanford.edu/courses/cs147/2021/wi/projects/Sustainability/barefoot/Finalreport.pdf',
@@ -214,7 +214,7 @@ const ProjectPage = () => {
                         </div>
 
                         {selectedWork?.tags && (
-                            <div className="absolute bottom-4 flex flex-row pt-1 text-xs">
+                            <div className="absolute mb-2 bottom-4 flex flex-row pt-1 text-xs">
                                 {selectedWork?.tags.map((tag, index) => (
                                     <div
                                         key={index}
@@ -226,7 +226,7 @@ const ProjectPage = () => {
                             </div>
                         )}
 
-                        <Typography style={{ fontSize: '12px' }} className=" py-2 absolute bottom-10 px-1 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
+                        <Typography style={{ fontSize: '12px' }} className=" py-2 absolute bottom-10 px-2 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
                             {selectedWork?.note}
                         </Typography>
                     </Box>

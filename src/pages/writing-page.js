@@ -115,12 +115,91 @@ const WritingPage = () => {
         {
             title: 'kintsugi - coda',
             tags: ['excerpt'],
-            text: ''
+            text: `the tragedy i write is of my own composition, or, a requiem for the chained. deft fingers caress steel strings as this elegy plays on. the journey continues and i watch the sky alight against the collapsing sun.
+            i know nothing but how to force myself to change. have i learned anything, after all this time? i\u2019ve become self aware, at least. this alone took twenty years. i fear the uncertainty of how many more it will take to reach any of those elusive desires i\u2019ve been searching for. it\u2019s time to start again. every exhale pains.
+            if something shatters, what is there to do with the broken pieces but to cut your calloused fingertips on those jagged edges and close your eyes and exhale, bone-deep and weary, and feel the coolness of the ceramic like a ghost of a kiss, a salve, against the warmth of your own blood, dark, slick, rivulets pooling between the cracks in your fingers and the cracks in the shards (and the cracks in your facade, the cracks in your very foundations as life as you know it is trembling, now, can you feel it? you reach out with one crimson-stained palm and feel the lines blurring, boundaries vibrating, almost tangible, just nearly but not quite).
+            kintsugi is the word, my mother says in lilting japanese. kintsugi, or kintsukuroi, the traditional art of repairing broken pottery and ceramics with gold thread. and what is there to do but open your eyes and look at the wreckage in your own two hands and feel the staccato of your aching heart and somewhere between the blurriness of your tears and the trembling of your fingertips, the red is gold and the gold is red (the colors of your motherland, your home, and it\u2019s auspicious, ironic, fitting, really, that it\u2019s come to this). there is blood and gold and there is gold and glory and there is glory and grace and you have remade yourself, you are grace.
+              
+            **Da Capo al Coda: an instruction in music, where, once you reach the end, you return to the beginning and play until the coda, then perform the coda.`
         },
         {
             title: 'haiku anthology',
             tags: ['poem'],
-            text: ''
+            text: `we were—too close to
+            memory, and too perfect
+            for reality.
+             
+            DELTA
+            fingers interlaced
+            against a collapsing sun
+            twilight falls, gently
+             
+             
+            what is it we seek?
+            the moon sighs, then disappears
+            suffocatingly
+             
+             
+            take a breath darling
+            rose-tinted ballads of love
+            amorphous, perhaps
+             
+             
+            close your eyes—listen:
+            deft fingers caress steel strings
+            elegies play on
+             
+             
+            DELTA
+            fingers interlaced
+            against a collapsing sun
+            twilight falls, gently
+             
+             
+            sky rockets in flight
+            as the break of dawn beckons
+            here we rise anew
+             
+             
+            TRIUMPH
+            like starbursts, we blaze
+            with fingerprints drenched in lust
+            souls too bright to quench
+             
+            dawn cracks at its seams
+            these bleeding rays dance and rise
+            drenched in honeyed light
+             
+             
+            ATLAS
+            his eyes, they shone once
+            defying the world\u2019s axis
+            in fate undeserved
+             
+            can you hear his heart?
+            buried footnotes of glory
+            leashed, infinitely
+             
+            skies fall; he staggers
+            cradling burdens in scarred hands
+            every exhale pains
+             
+            hope stutters, fractured
+            crumbling like ashen tears
+            as tomorrow burns
+             
+            CANDLELIGHT
+            lips that scorch like stars
+            painting my body\u2019s cosmos
+            salaciously sweet
+             
+            your touch brands my skin
+            a murmur, “so beautiful”
+            spine arches, eyes close
+             
+            soft sighs unravel
+            entangled in silken sheets
+            kiss me til im whole`
         }
         // add more artworks here
     ];
@@ -163,9 +242,9 @@ const WritingPage = () => {
                 </Typography>
                 <div className="flex flex-col items-center justify-center min-h-screen pb-96">
                     <div className="relative w-full pb-32">
-                        <Typography className="text-gray-400 ml-2">
+                        {/* <Typography className="text-gray-400 ml-2">
                             shorter drabbles
-                        </Typography>
+                        </Typography> */}
                         <Slider {...settings} ref={(slider1) => setSliderRef1(slider1)}>
                             {writings1.map((writing, index) => (
                                 <div key={index} className="px-2">
@@ -178,7 +257,7 @@ const WritingPage = () => {
                                 </div>
                             ))}
                         </Slider>
-                        <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4 pb-80">
+                        <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4 pb-32">
                             <button className="bg-gray-200 rounded-full p-2" onClick={() => sliderRef1.slickPrev()}>
                                 <FontAwesomeIcon icon={faArrowLeft} size="lg" />
                             </button>
@@ -187,7 +266,7 @@ const WritingPage = () => {
                             </button>
                         </div>
 
-                        <Typography className="text-gray-400 ml-2 mt-6">
+                        {/* <Typography className="text-gray-400 ml-2 mt-6">
                             longer essays
                         </Typography>
 
@@ -210,7 +289,7 @@ const WritingPage = () => {
                             <button className="bg-gray-200 rounded-full p-2" onClick={() => sliderRef2.slickNext()}>
                                 <FontAwesomeIcon icon={faArrowRight} size="lg" />
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

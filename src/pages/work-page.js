@@ -180,7 +180,7 @@ const WorkPage = () => {
               </div>
             )}
             {selectedWork?.tags && (
-              <div className="absolute bottom-4 flex flex-row pt-1 text-xs">
+              <div className="absolute mb-2 bottom-4 flex flex-row pt-1 text-xs">
                 {selectedWork?.tags.map((tag, index) => (
                   <div
                     key={index}
@@ -192,7 +192,7 @@ const WorkPage = () => {
               </div>
             )}
 
-            <Typography style={{ fontSize: '12px' }} className=" py-2 absolute bottom-10 px-1 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
+            <Typography style={{ fontSize: '12px' }} className=" mr-2 py-2 absolute bottom-12 px-1 italic text-purple-400" id="modal-modal-description" sx={{ mt: 0 }}>
               {selectedWork?.note}
             </Typography>
           </Box>
