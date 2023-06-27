@@ -65,7 +65,7 @@ const WorkPage = () => {
       in the startup space, especially while still enrolled full time as a student, 
       is the most intentional and impactful decision I have made in my career. I would love to chat about the journey this has been!`,
       moreInfo:
-        ['8th engineer on the founding team',
+        ['2nd engineer on the founding team',
           'Built and own the entire stack for the user-facing FruitScope Cloud web-application from scratch in < 2 months',
           'Implemented and optimized MongoDB data ingestion to handle farmers’ scan data of 2million+ buds per scan per block',
           'Implemented and optimized Flask endpoints and MongoDB data querying to transfer orchard and block and tree level data for farmers',

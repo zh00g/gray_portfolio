@@ -10,6 +10,7 @@ import Typing from 'react-typing-effect';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import DarkModeContext from '../components/DarkModeContext';
 import DarkModeToggle from '@/components/DarkModeToggle';
+import styles from './index.module.css';
 
 import React from 'react';
 import {
@@ -181,22 +182,65 @@ const HomePage = () => {
             </Box> */}
           </div>
           <Box>
-            <img
-              src="/gray-plane.png"
+            {/* <img
+              src="/memchu_profpic_cropped.png"
               alt="self pic"
               className="w-full h-full object-cover mt-4"
               style={{ width: '80%', maxWidth: '100%' }}
-            />
-            <Typography style={{ fontSize: '12px' }} className="text-gray-400 text-xs text-left  mt-1">
-              📸: matt | 📍: abandoned hangar, chandler
-            </Typography>
+          /> */}
+            <Box>
+              <div className={styles.flipCard}>
+                <div className={styles.flipCardInner}>
+                  <div className={styles.flipCardFront}>
+                    <img
+                      src="/memchu_profpic_cropped.png"
+                      alt="self pic"
+                      className="w-full h-full object-cover mt-4 pr-1"
+                    />
+                    <p className="text-gray-400 text-xs text-left mt-1">
+                      📸: josie | 📍: stanford, ca
+                    </p>
+                  </div>
+                  <div className={styles.flipCardBack}>
+                    <div className='flex flex-col mt-4 items-center'>
+                      <img
+                        src="/square_face.png"
+                        alt="self pic"
+                        className="w-24 h-24 object-cover rounded-full"
+                      />
+                    </div>
+                    {/* <p className='text-gray-700 mt-2 font-bold text-lg'>about me: </p> */}
+                    <div className='text-gray-500 my-2 mx-4 text-sm text-left'>
+
+                      <span> I&apos;m a Master&apos;s student at Stanford studying Human-Computer Interaction, exploring how to create tech for good for all. We are the sum of our experiences, and as technologists and designers, we should create <span className='font-bold text-purple-400'>beautiful</span>, <span className='font-bold text-purple-400'>accessible</span>, and <span className='font-bold text-purple-400'>inclusive</span> products that share the best of ourselves and our values with the world. </span>
+                      <br></br>
+                      <br></br>
+                      <span> Currently, I&apos;m the 2nd founding engineer at Orchard Robotics, building the future of precision crop management for a more sustainable and food-secure world. Previously, I&apos;ve had engineering experience at Meta and Amazon. Outside work, I can be found drinking coffee (black), attempting bench PR&apos;s, and spotify trawling.</span>
+
+                    </div>
+
+                    {/* <p className='text-gray-700 mt-2 font-bold text-lg'>Asides: </p> */}
+                    <div className='text-gray-500 mx-4 my-6 text-sm text-left'>
+                      <hr className='border-gray-300 my-2' />
+                      <p>  📍 Bellevue, WA </p>
+                      <p>  🔩 this site was built in Next.js and Vercel </p>
+                      <p>  👋🏼 come say hi! gracexz[at]stanford.edu </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Box>
+
+            {/* <Typography style={{ fontSize: '12px' }} className="text-gray-400 text-xs text-left  mt-1">
+              📸: josie | 📍: stanford, ca
+            </Typography> */}
           </Box>
         </div>
 
         <FooterLinks></FooterLinks>
 
-      </Container>
-    </div>
+      </Container >
+    </div >
 
   );
 };
