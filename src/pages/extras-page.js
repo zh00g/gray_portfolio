@@ -95,6 +95,12 @@ const ExtrasPage = () => {
             route: '/music', // specify the route for this card
         },
         {
+            title: 'kintsugi, etc.',
+            image: '/grace-board.JPG',
+            description: '📸: shihao | 📍: bellevue, wa ',
+            route: '/kintsugi', // specify the route for this card
+        },
+        {
             title: 'jewelry',
             image: '/jewelry.png',
             description: '📸: me | 📍: my dorm @ 1018 ',
@@ -105,6 +111,12 @@ const ExtrasPage = () => {
             image: '/skate.png',
             description: '📸: shihao | 📍: north campus, cornell ',
             route: '/skating', // specify the route for this card
+        },
+        {
+            title: 'farewhale',
+            image: '/skate.png',
+            description: '📸: andrew | 📍: stanford, ca ',
+            route: '/farewhale', // specify the route for this card
         },
         {
             title: 'lifts',
