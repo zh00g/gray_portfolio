@@ -33,7 +33,7 @@ const FooterLinks = () => {
                     {/* <i className="fas fa-envelope mx-4 text-2xl hover:text-gray-400"></i> */}
                     <FontAwesomeIcon className='ml-2' size='2xl' icon={faEnvelope} fixedWidth />
                 </a>
-                <a href="https://drive.google.com/file/d/1pSt6Sc8KuDgTO56QCgGjZKk5D8lKutP-/edit?rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+                <a  href="/GraceZhangBSResume_Dec23.pdf" target="_blank" rel="noopener noreferrer">
                     {/* <i className="fas fa-envelope mx-4 text-2xl hover:text-gray-400"></i> */}
                     <FontAwesomeIcon className='ml-2' size='2xl' icon={faFile} fixedWidth />
                 </a>
