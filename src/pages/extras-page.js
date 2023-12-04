@@ -114,7 +114,7 @@ const ExtrasPage = () => {
         },
         {
             title: 'farewhale',
-            image: '/skate.png',
+            image: '/farewhale_crop.png',
             description: '📸: andrew | 📍: stanford, ca ',
             route: '/farewhale', // specify the route for this card
         },
