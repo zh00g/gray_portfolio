@@ -49,6 +49,14 @@ const HomePage = () => {
 
   const songs = [
     "https://open.spotify.com/embed/track/53F62yfHICseGNOBAH0QUR?utm_source=generator",
+    "https://open.spotify.com/embed/track/5ovaVBwKXyakYrIGyDJgzb?utm_source=generator",
+    "https://open.spotify.com/embed/track/7pSXniv8WshbQomgMgaFPB?utm_source=generator",
+    "https://open.spotify.com/embed/track/2VsvVMlRMlBmaIJxYDGtTP?utm_source=generator",
+    "https://open.spotify.com/embed/track/6FRbizhBGQoIt8I5qqQNKF?utm_source=generator",
+    "https://open.spotify.com/embed/track/6yv4CmtZ0kHZYzNHWvEUxa?utm_source=generator",
+    "https://open.spotify.com/embed/track/6AuCbXSt9dycyMP6TiibGM?utm_source=generator",
+    "https://open.spotify.com/embed/track/6wgmzw64fvWGVNfDRbOHFh?utm_source=generator",
+    "https://open.spotify.com/embed/track/4Hq5iUZtrN9X4oNXdbW1r7?utm_source=generator",
     "https://open.spotify.com/embed/track/0p6I0l59E0V68Wv8Wele4F?utm_source=generator",
     "https://open.spotify.com/embed/track/1xc8mw8GAyYWBmLnXeYMMA?utm_source=generator",
     "https://open.spotify.com/embed/track/2yj8xbWxfrW8azD7VDQBER?utm_source=generator",
@@ -111,10 +119,10 @@ const HomePage = () => {
         >
           <div className="text-center mb-8 md:mb-0 md:text-left mt-48">
             <Typography variant="h4" style={{ fontWeight: 'bold' }} className="mb-1 font-bold text-4xl">
-              ☀️ hello world! i&apos;m <span className="text-gray-400"> gray </span>
+              ☀️ hello world! i&apos;m <span className="text-gray-400"> grace </span>
             </Typography>
             <Typography className="pl-12 text-gray-400 text-left mr-12">
-              building @ <a className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400' href="https://www.orchard-robotics.com/">orchard robotics</a> <span className='m-2 text-l'>&&</span> cs @ stanford
+              fullstack @ <a className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400' href="https://www.facebook.com/dating">fb dating</a> <span className='m-2 text-l'>&&</span> cs @ stanford
               {/* • part-time coder, part-time artist — <><i className="text-gray-500">full-time dreamer</i></> */}
               {/* <br />
             <React.Fragment>
@@ -212,17 +220,20 @@ const HomePage = () => {
                     {/* <p className='text-gray-700 mt-2 font-bold text-lg'>about me: </p> */}
                     <div className='text-gray-500 my-2 mx-4 text-sm text-left'>
 
-                      <span> I&apos;m a Master&apos;s student at Stanford studying Human-Computer Interaction, exploring how to create tech for good for all. We are the sum of our experiences, and as technologists and designers, we should create <span className='font-bold text-purple-400'>beautiful</span>, <span className='font-bold text-purple-400'>accessible</span>, and <span className='font-bold text-purple-400'>inclusive</span> products that share the best of ourselves and our values with the world. </span>
+                      <span> Welcome to my little slice of the web; I&apos;m so glad you&apos;re here! I graduated from Stanford in June 2023, and my grounding philosophy as an engineer is that we are the sum of our experiences, and as technologists and designers, we should create <span className='font-bold text-purple-400'>beautiful</span>, <span className='font-bold text-purple-400'>accessible</span>, and <span className='font-bold text-purple-400'>inclusive</span> products that share the best of ourselves and our values with the world. </span>
                       <br></br>
                       <br></br>
-                      <span> Currently, I&apos;m the 2nd founding engineer at Orchard Robotics, building the future of precision crop management for a more sustainable and food-secure world. Previously, I&apos;ve had engineering experience at Meta and Amazon. Outside work, I can be found drinking coffee (black), attempting bench PR&apos;s, and spotify trawling.</span>
+                      <span> Currently, I&apos;m a fullstack engineer at <a className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400' href="https://www.facebook.com/dating">FB Dating</a>. Previously, I was the 2nd founding engineer at <a className='hover:scale-105 transition-all duration-300 hover:underline text-purple-400' href="https://www.orchard-robotics.com/">Orchard Robotics</a>, building the future of precision crop management for a more sustainable and food-secure world. Outside work, I can be found drinking coffee (black), attempting bench PR&apos;s, and spotify trawling.</span>
+
+                      <span> I also love art and building things and trying to learn everything I wasn&apos;t able to in college -- lately I&apos;ve been trying to learn how to CAD and dabble in little embedded personal projects.
+                        If any of this resonates with anyone, or if you&apos;d like to chat about anything at all, please please come rabbithole with me! I&apos;m always looking to share stories and things I love with the world. </span>
 
                     </div>
 
                     {/* <p className='text-gray-700 mt-2 font-bold text-lg'>Asides: </p> */}
                     <div className='text-gray-500 mx-4 my-6 text-sm text-left'>
                       <hr className='border-gray-300 my-2' />
-                      <p>  📍 Bellevue, WA </p>
+                      <p>  📍 San Francisco, CA </p>
                       <p>  🔩 this site was built in Next.js and Vercel </p>
                       <p>  👋🏼 come say hi! gracexz[at]stanford.edu </p>
                     </div>

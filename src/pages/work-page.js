@@ -55,12 +55,26 @@ const WorkPage = () => {
 
   const workData = [
     {
+      id: 0,
+      title: 'swe @ meta',
+      image: '/metalogo.png',
+      description: 'fullstack (mobile) @ fb dating',
+      role: 'fullstack (mobile)',
+      duration: 'Dec 2024 - present',
+      // note: `Deciding to work at Orchard and 
+      // in the startup space, especially while still enrolled full time as a student, 
+      // is the most intentional and impactful decision I have made in my career. I would love to chat about the journey this has been!`,
+      moreInfo:
+        ['Building new features for Facebook Dating!',],
+      tags: ['React Native', 'Hack', 'GraphQL']
+    },
+    {
       id: 1,
-      title: 'orchard',
+      title: 'founding eng @ orchard',
       image: '/orchard.svg',
       description: 'fullstack (web) @ fruitscope cloud',
       role: 'fullstack (web)',
-      duration: 'feb 2023 - present',
+      duration: 'feb 2023 - Jan 2024',
       note: `Deciding to work at Orchard and 
       in the startup space, especially while still enrolled full time as a student, 
       is the most intentional and impactful decision I have made in my career. I would love to chat about the journey this has been!`,
@@ -74,7 +88,7 @@ const WorkPage = () => {
     },
     {
       id: 2,
-      title: 'meta',
+      title: 'swe intern @ meta',
       image: '/metalogo.png',
       description: 'fullstack (web) @ fb core ads',
       role: 'fullstack (web)',
@@ -87,7 +101,7 @@ const WorkPage = () => {
     },
     {
       id: 3,
-      title: 'meta',
+      title: 'swe intern @ meta',
       image: '/metalogo.png',
       role: 'fullstack (mobile)',
       duration: 'sep 2021 - dec 2021',
@@ -99,18 +113,18 @@ const WorkPage = () => {
       ],
       tags: ['React Native', 'Hack', 'GraphQL']
     },
-    {
-      id: 4,
-      title: 'amazon',
-      image: '/awslogo.png',
-      role: 'backend',
-      duration: 'jun 2021 - sep 2021',
-      description: 'backend @ aws personalize',
-      moreInfo: ['Implemented 3 new customer-facing APIs in Java using Amazon’s proprietary RPC framework (Coral) to handle tagging resources in the AWS Personalize service.',
-        'Created testing infrastructure by adding unit tests and implemented sweeper API.'
-      ],
-      tags: ['Java']
-    },
+    // {
+    //   id: 4,
+    //   title: 'amazon',
+    //   image: '/awslogo.png',
+    //   role: 'backend',
+    //   duration: 'jun 2021 - sep 2021',
+    //   description: 'backend @ aws personalize',
+    //   moreInfo: ['Implemented 3 new customer-facing APIs in Java using Amazon’s proprietary RPC framework (Coral) to handle tagging resources in the AWS Personalize service.',
+    //     'Created testing infrastructure by adding unit tests and implemented sweeper API.'
+    //   ],
+    //   tags: ['Java']
+    // },
     // Add more work objects here
   ];
 
